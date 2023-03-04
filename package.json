@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node app.js -au sanane banane"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "node-fetch": "^3.3.0",
+    "zaproxy": "^1.0.1",
+    "clui": "^0.3.6",
+    "moment": "^2.29.4"
+  }
+}

@@ -1,0 +1,31 @@
+version: "3.4"
+
+services:
+  owsapzap:
+    image: owasp/zap2docker-stable
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/owaspzap
+      - ./AiberryContext.context:/zap/wrk/BobitContext.context
+    command: "zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true -config api.key=dfau1kcknoh5rua3477dbuu14k"
+  zaproxy:
+    container_name: zaproxy_1
+    image: zaproxy
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      PROXY_HOST: owsapzap
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    # wait until owsapzap is ready and wait 10 seconds
+networks:
+  default:
+    driver: bridge
+volumes:
+  zaproxy_data:

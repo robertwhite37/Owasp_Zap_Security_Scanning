@@ -1,6 +1,9 @@
-<a href="https://robertwhite.vercel.app/" target="_blank">
-  <img src="https://raw.githubusercontent.com/robertwhite37/robertwhite37/main/3.png" alt="Robert White Logo" width="300">
-</a>
+<div align="center">
+  <a href="https://robertwhite.vercel.app/" target="_blank">
+    <img src="https://raw.githubusercontent.com/robertwhite37/robertwhite37/main/3.png" alt="Robert White Logo" width="300">
+  </a>
+</div>
+
 
 
 Run security tests with docker compose
